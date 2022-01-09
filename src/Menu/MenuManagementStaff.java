@@ -40,7 +40,7 @@ public class MenuManagementStaff {
                         }
                         break;
                     case 2:
-                        staffManager.editByName();
+                        staffManager.editById();
                         break;
                     case 3:
                         staffManager.editStatusByName();

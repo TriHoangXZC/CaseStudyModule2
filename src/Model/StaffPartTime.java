@@ -24,8 +24,8 @@ public class StaffPartTime extends Staff {
     @Override
     public String toString() {
         return "Model.StaffPartTime{" + super.toString() +
-                "workHour=" + workHour +
-                "total salary" + getTotalSalary() +
+                " workHour= " + workHour +
+                " total salary " + getTotalSalary() +
                 '}';
     }
 }

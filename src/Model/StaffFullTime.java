@@ -16,6 +16,6 @@ public class StaffFullTime extends Staff {
 
     @Override
     public String toString() {
-        return "Model.StaffFullTime{" + super.toString() + "total salary" + getTotalSalary() + "}";
+        return "Model.StaffFullTime{" + super.toString() + " total salary " + getTotalSalary() + "}";
     }
 }

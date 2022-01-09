@@ -173,44 +173,20 @@ public class StaffManager {
         save();
     }
 
-    public void editByName() throws IOException {
-        System.out.println("Input name want edit: ");
-        String nameEdit = scanner.nextLine();
+    public void editById() throws IOException {
+        System.out.println("Input id want edit: ");
+        int idEdit = Integer.parseInt(scanner.nextLine());
         int check = -1;
         for (int i = 0; i < staffArrayList.size(); i++) {
-            if (staffArrayList.get(i).getName().equals(nameEdit)) {
+            if (staffArrayList.get(i).getId() == idEdit) {
                 check = i;
             }
         }
         if (check < 0) {
-            System.out.println("Name is not in the list");
+            System.out.println("ID is not in the list");
         } else if (staffArrayList.get(check) instanceof StaffFullTime) {
             staffArrayList.remove(check);
             staffArrayList.add(check, creatStaff("StaffFullTime"));
-
-//            int id = getId();
-//            String name = getName();
-//            int age = getAge();
-//            String gender = getGender();
-//            String phone = getPhone();
-//            String email = getEmail();
-//            String address = getAddress();
-//            boolean status = isStatus();
-//            double salary = getSalary();
-//            staffArrayList.get(check).setId(id);
-//            staffArrayList.get(check).setName(name);
-//            staffArrayList.get(check).setAge(age);
-//            staffArrayList.get(check).setGender(gender);
-//            staffArrayList.get(check).setPhone(phone);
-//            staffArrayList.get(check).setEmail(email);
-//            staffArrayList.get(check).setAddress(address);
-//            staffArrayList.get(check).setStatus(status);
-//            staffArrayList.get(check).setSalary(salary);
-//            if (staffArrayList.get(check) instanceof StaffPartTime) {
-//                System.out.println("Input work hour: ");
-//                int workHour = scanner.nextInt();
-//                scanner.nextLine();
-//                ((StaffPartTime) staffArrayList.get(check)).setWorkHour(workHour);
             } else {
             staffArrayList.remove(check);
             staffArrayList.add(check, creatStaff("StaffPartTime"));
