@@ -20,13 +20,13 @@ public class ManagerLogin {
         userArrayList = (ArrayList<User>) objectInputStream.readObject();
     }
 
-//    public static void removeLogin(String nameLogin) throws IOException, ClassNotFoundException{
-//        readFileLogin();
-//        for (int i = 0; i < userArrayList.size(); i++) {
-//            if(userArrayList.get(i).getUserName().equals(nameLogin)){
-//                userArrayList.remove(i);
-//            }
-//        }
-//        writeFileLogin();
-//    }
+    public static void removeLogin(String nameLogin) throws IOException, ClassNotFoundException{
+        readFileLogin();
+        for (int i = 0; i < userArrayList.size(); i++) {
+            if(userArrayList.get(i).getUserName().equals(nameLogin)){
+                userArrayList.remove(i);
+            }
+        }
+        writeFileLogin();
+    }
 }

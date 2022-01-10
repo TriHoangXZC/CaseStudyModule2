@@ -20,6 +20,7 @@ public class MenuManagementLogin {
                 System.out.println("Welcome");
                 System.out.println("1. Login");
                 System.out.println("2. Register");
+                System.out.println("3. Remove account");
                 System.out.println("Please choice: ");
                 int choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
@@ -29,6 +30,10 @@ public class MenuManagementLogin {
                     case 2:
                         register();
                         break;
+                    case 3:
+                        System.out.println("Input user name want remove: ");
+                        String userNameDel = scanner.nextLine();
+                        ManagerLogin.removeLogin(userNameDel);
                 }
             } catch (Exception e) {
                 System.out.println("Please choice 1 or 2!");
