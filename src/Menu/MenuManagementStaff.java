@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class MenuManagementStaff {
     static Scanner scanner = new Scanner(System.in);
 
-    public static void menuStaff() throws IOException, ClassNotFoundException {
+    public static void menuStaff() {
         StaffManager staffManager = new StaffManager("src/file.txt");
 
         while (true) {

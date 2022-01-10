@@ -39,7 +39,7 @@ public class StaffManager {
         }
     }
 
-    public void addStaff(String typeStaff) throws IOException, ClassNotFoundException {
+    public void addStaff(String typeStaff) throws IOException {
         read();
         Staff staff = creatStaff(typeStaff);
         staffArrayList.add(staff);
@@ -47,7 +47,7 @@ public class StaffManager {
         save();
     }
 
-    public void showAllStaff() throws IOException, ClassNotFoundException {
+    public void showAllStaff()  {
         read();
         for (Staff staff : staffArrayList) {
             System.out.println(staff);
@@ -77,7 +77,7 @@ public class StaffManager {
         }
     }
 
-    public void findStaffByName() throws IOException, ClassNotFoundException {
+    public void findStaffByName()  {
         read();
         System.out.println("Input name want find: ");
         String name = scanner.nextLine();
@@ -93,7 +93,7 @@ public class StaffManager {
         }
     }
 
-    public void showStaffByStatus() throws IOException, ClassNotFoundException {
+    public void showStaffByStatus()  {
         read();
         System.out.println("1. List staff working: ");
         System.out.println("2. List staff retired: ");
@@ -113,7 +113,7 @@ public class StaffManager {
         }
     }
 
-    public void checkStaffStatus() throws IOException, ClassNotFoundException {
+    public void checkStaffStatus() {
         read();
         System.out.println("Input name staff want check status: ");
         String name = scanner.nextLine();
@@ -130,7 +130,7 @@ public class StaffManager {
         }
     }
 
-    public void showStaffByTypeStaff() throws IOException, ClassNotFoundException {
+    public void showStaffByTypeStaff()  {
         read();
         System.out.println("1. List staff full time: ");
         System.out.println("2. List staff part time: ");
@@ -150,7 +150,7 @@ public class StaffManager {
         }
     }
 
-    public void editStatusByName() throws IOException, ClassNotFoundException {
+    public void editStatusByName() throws IOException{
         read();
         System.out.println("Input name staff want check status: ");
         String name = scanner.nextLine();
@@ -290,6 +290,7 @@ public class StaffManager {
                     for (Staff staff : staffArrayList) {
                         if (staff.getEmail().equals(email)) {
                             check = 1;
+                            break;
                         }
                     }
                     if (check < 0) {
@@ -320,7 +321,7 @@ public class StaffManager {
         while (true) {
             try {
                 System.out.println("Input Status (working: 1), (retired: 2): ");
-                boolean status = false;
+                boolean status;
                 int status1 = Integer.parseInt(scanner.nextLine());
                 if (status1 == 1) {
                     status = true;
@@ -344,7 +345,7 @@ public class StaffManager {
     }
 
     public void read() {
-        FileInputStream fileInputStream = null;
+        FileInputStream fileInputStream;
         try {
             fileInputStream = new FileInputStream(nameFile);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);

@@ -1,7 +1,6 @@
 package Menu;
 
 import Manager.ManagerLogin;
-import Menu.MenuManagementStaff;
 import Model.User;
 
 import java.io.IOException;
@@ -15,7 +14,7 @@ public class MenuManagementLogin {
         return temp;
     }
 
-    public static void menu() throws IOException, ClassNotFoundException {
+    public static void menu() {
         while (true) {
             try {
                 System.out.println("Welcome");
